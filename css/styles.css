@@ -1,5 +1,6 @@
 /* Main styles */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
 /* Variables */
 
@@ -63,8 +64,13 @@ button {
 #btn__reset {
 	width: 200px;
 	margin: 0 auto;
+  transition: all 0.3 ease;
 }
 
+#btn__reset:hover {
+	width: 170px;
+	opacity: .9;
+}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -131,14 +137,14 @@ button {
 }
 
 .chosen {
-  background: #3a3f58;
+  background: #3487A2;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: #FF5858;
   color: #FFFFFF;
 }
 
@@ -146,12 +152,13 @@ button {
   padding: 16px;
   margin: 50px auto;
   background: #f7a964;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
   border-bottom: solid 4px rgba(0, 0, 0, .3);
   border-right: solid 3px rgba(0, 0, 0, .3)
 }
+
 
 .btn__reset:active {
   padding: 14px 16px 16px 14px;
@@ -180,7 +187,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #1f6d7b;
 }
 
 .start a {

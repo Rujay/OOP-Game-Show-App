@@ -16,14 +16,43 @@ class Phrase {
             li.textContent = character;
             if (li.textContent === ' ') {
                 li.className = 'space';
+            } else {
+                li.className =`hide letter ${character}`;
             }
-        })
+
+            ul.appendChild(li);
+        });
 
     }
-    checkLetter() {
-
+    /**
+    * Checks if passed letter is in phrase
+    * @param (string) letter - Letter to check
+    */
+    checkLetter(letter) {
+        return game.activePhrase.phrase.includes(letter);
     }
-    showMatchedLetter(){
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter){
+        const characters = document.querySelectorAll('#phrase ul li');
+        let charArray = [];
+        
+        characters.forEach(li => {
+            charArray.push(li);
+        });
+
+        charArray.forEach(li => {
+            if (this.checkLetter(letter)) {
+
+                if (li.className === `hide letter ${letter}`) {
+                    li.className = `show letter ${letter}`;
+                }
+
+
+            }
+        });
         
     }
 }
