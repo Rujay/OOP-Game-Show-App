@@ -52,7 +52,7 @@ class Game {
         const hearts = document.querySelectorAll('.tries img');
 
         if (this.missed < hearts.length) {
-            hearts[this.missed].src = '/images/lostHeart.png';
+            hearts[this.missed].src = 'images/lostHeart.png';
         }
         
         this.missed++;
@@ -126,7 +126,11 @@ class Game {
             button.className = 'chosen';
             this.activePhrase.showMatchedLetter(key);
             this.checkForWin()
-            this.gameOver()
+            
+            if (this.checkForWin() === true) {
+                this.gameOver();
+            }
+            
             
         } else if (!checkKey) {
             this.removeLife()
@@ -156,7 +160,7 @@ class Game {
             });
 
             hearts.forEach(heart => {
-            heart.src = '/images/liveHeart.png';
+            heart.src = 'images/liveHeart.png';
             this.missed = 0;
             });
         }
